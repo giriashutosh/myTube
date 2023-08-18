@@ -1,0 +1,27 @@
+Build youtube.
+Steps- 
+1. Requirements clarification. (5 mins)
+   -Features need to build.
+   -TechStack(React + Tailwind css) proper justification why we are choosing that.
+   -react-router-dom
+   -what bundler you are using.
+   -testing lib.
+
+2. Planning (5 mins)
+  LLD
+  UI design
+  -Head component
+  -sideBar component
+  -button component
+  -body component
+  -video container.
+  -watch video container.
+
+
+create-react-app is a javascript package or library.
+
+SetUp Tailwind in the project.
+1. npm i -D tailwindcss.
+2. npx tailwindcss init.
+3. content inside config file.
+4. change in App.css.

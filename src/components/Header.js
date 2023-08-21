@@ -11,11 +11,13 @@ const Header = () => {
                 <img className="w-10 " src={Hamburger} alt="" />
                 <img className="w-20" src={Hippo} alt="" />
             </div>
+
             {/* for search  */}
             <div className='grid-col-10  flex'>
                 <input className='w-[29rem] pl-2 border-2 rounded-l-full h-10 outline-none start-2'></input>
                 <button className='bg-gray-100 flex items-center p-2 rounded-r-full'>🔍</button>
             </div>
+            
             {/* for user account  */}
             <div className='grid-col-10  flex flex-row-reverse '>
                 <img className="w-10 py-2 pr-2 mr-2" src={UserImg} alt=""/>

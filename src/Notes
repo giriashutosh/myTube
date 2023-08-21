@@ -25,3 +25,14 @@ SetUp Tailwind in the project.
 2. npx tailwindcss init.
 3. content inside config file.
 4. change in App.css.
+
+Need to done
+install redux 
+create store for collapsing hamburger
+complete side bar
+create button list
+use youtube api for videos
+create auth key credentials for api
+create watch page
+install react-router-dom
+useSearchParams for querySearch

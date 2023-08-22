@@ -14,10 +14,16 @@ import subscription from '../Assets/Images/subscripition.png'
 import trending from '../Assets/Images/trending-icon.jpg'
 import watchlater from '../Assets/Images/watchlater.jpg'
 import shopping from '../Assets/Images/shopping-bag.jpg'
+import { useSelector } from 'react-redux'
 
 const SideBar = () => {
+    const isSideBarOpen = useSelector((state) => state.appReducer.isSideBarOpen)
+    console.log(isSideBarOpen)
+    
+    if (!isSideBarOpen) return null;
+
     return (
-        <div className='col-span-1 shadow-lg p-2'>
+        <div className='col-span-1 shadow-lg p-2 '>
             {/* <h1 className='font-bold'>Subscriptions</h1> */}
             <div className='m-3 mb-4'>
                 <div className='flex p-1 gap-2 items-center m-2'>
@@ -92,12 +98,12 @@ const SideBar = () => {
                 </div>
             </div>
             <hr />
-            <div className='w-2'>
-                our mission is to give everyone voice and show them the world.
-                we believe that everyone deserves to have a voice and that the world is a
-                better place when we listen, share and build community through our stories.
+            {/* <div className='w-2 bg-slate-500 relative'>
+           <p className=''>Our mission is to give everyone a voice and show them the world.
+    We believe that everyone deserves to have a voice and that the world is a
+    better place when we listen, share, and build a community through our stories</p>
                
-            </div>
+            </div> */}
 
         </div>
     )

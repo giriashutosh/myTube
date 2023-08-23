@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { VIDEOS_API } from '../utils/constant'
 import VideoCard from './VideoCard'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { closeSideBar } from '../store/appSlice'
 
 const VideoContainer = () => {
     const [videos, setVideos] = useState()
+    const dispatch = useDispatch()
+
+    const sideBarCloseHandler = () => {
+       dispatch(closeSideBar())
+    }
 
     const fetchVideos = async () => {
         try {
@@ -29,7 +37,7 @@ const VideoContainer = () => {
     return (
         <div className='flex flex-wrap my-2  font-roboto'>
             {
-                videos.map(video => <VideoCard key={video.id} video={ video} />) 
+                videos.map(video => <Link onClick={ sideBarCloseHandler} to={"/watch?v="+video.id} key={video.id}><VideoCard  video={ video} /></Link>) 
            }
         </div>
     )

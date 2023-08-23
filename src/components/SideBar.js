@@ -15,10 +15,10 @@ import trending from '../Assets/Images/trending-icon.jpg'
 import watchlater from '../Assets/Images/watchlater.jpg'
 import shopping from '../Assets/Images/shopping-bag.jpg'
 import { useSelector } from 'react-redux'
-
+import { Link } from 'react-router-dom'
 const SideBar = () => {
     const isSideBarOpen = useSelector((state) => state.appReducer.isSideBarOpen)
-    console.log(isSideBarOpen)
+    //console.log(isSideBarOpen)
     
     if (!isSideBarOpen) return null;
 
@@ -26,10 +26,12 @@ const SideBar = () => {
         <div className='col-span-1 shadow-lg p-2 '>
             {/* <h1 className='font-bold'>Subscriptions</h1> */}
             <div className='m-3 mb-4'>
-                <div className='flex p-1 gap-2 items-center m-2'>
+                <Link to="/">
+                    <div className='flex p-1 gap-2 items-center m-2'>
                     <img className="w-8" src={home} alt="" />
                     Home
-                </div>
+                    </div>
+                </Link>
                 <div className='flex p-1 pl-3 gap-4 items-center m-2'>
                     <img className="w-4" src={shorts} alt="" />
                     Shorts

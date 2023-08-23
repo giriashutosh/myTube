@@ -2,16 +2,37 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Body from './components/Body';
-import { Provider } from 'react-redux';
-import appStore from './store/store';
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import MainContainer from './components/MainContainer';
+import SideBar from './components/SideBar';
+import WatchPage from './components/WatchPage';
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Body />,
+    children: [{
+      path: "/",
+      element: <MainContainer/>
+    },
+      {
+        path: "/",
+        element: <SideBar/>
+      },
+      {
+        path: "watch",
+        element:<WatchPage/>
+      }]
+  }
+])
 
 function App() {
   return (
     <div className="App">
-      <Provider store={appStore}>
-        <Header />
-         <Body/>
-      </Provider>
+     
+      <RouterProvider router={appRouter}/>
+   
      
     </div>
   );

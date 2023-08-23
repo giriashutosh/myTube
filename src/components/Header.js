@@ -4,6 +4,7 @@ import Hippo from '../Assets/Images/hippo.png'
 import UserImg from '../Assets/Images/user.png'
 import { useDispatch } from 'react-redux'
 import { toggleSideBar } from '../store/appSlice'
+import { Link } from 'react-router-dom'
 const Header = () => {
     const dispatch = useDispatch()
 
@@ -16,7 +17,7 @@ const Header = () => {
             {/* for hamberger and Logo */}
             <div className='flex gap-4 grid-col-1  p-2'>
                 <img className="w-10 " src={Hamburger} alt="" onClick={sidebarHandler}/>
-                <img className="w-20" src={Hippo} alt="" />
+                <Link to="/"><img className="w-20" src={Hippo} alt="" /></Link>
             </div>
 
             {/* for search  */}

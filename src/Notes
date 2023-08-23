@@ -26,6 +26,7 @@ SetUp Tailwind in the project.
 3. content inside config file.
 4. change in App.css.
 
+
 Need to done
 install redux 
 create store for collapsing hamburger
@@ -36,3 +37,10 @@ create auth key credentials for api
 create watch page
 install react-router-dom
 useSearchParams for querySearch
+
+Debouncing 
+Performance
+
+typing slow = 14 letters * 1000 = 14000
+typing fast = 3 API calls * 1000 = 3000 
+API Call is heavy because of handshake and all process.

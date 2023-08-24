@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaUserCircle } from "react-icons/fa";
 const VideoCard = ({video}) => {
-    console.log(video)
+    
     const thumbnail = video.snippet.thumbnails.medium.url
     const title = video.snippet.title
     const channelTitle = video.snippet.channelTitle

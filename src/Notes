@@ -44,3 +44,22 @@ Performance
 typing slow = 14 letters * 1000 = 14000
 typing fast = 3 API calls * 1000 = 3000 
 API Call is heavy because of handshake and all process.
+
+Debouncing with 200ms
+ - if difference between 2 key strokes is < 200ms - Decline API call
+ - if it is > 200ms - make the API call
+
+key-i
+ -render the component
+ -useEffect()
+ -start the timer => make api call after 200ms
+key -ip
+ -destroying the component (useEffect return method)
+ -re-render the component
+ -useEffect()
+ -start the timer => make api call after 200ms
+
+ Need to done
+ - youtube search suggestion api gave us the data in XML format.
+ -Implement the debouncing in search query in the header.
+

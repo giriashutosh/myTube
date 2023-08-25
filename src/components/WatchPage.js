@@ -76,7 +76,7 @@ const WatchPage = () => {
 
                 }
             </div>
-            <RecommendedVideos />
+            <RecommendedVideos setId={setSearchParams} videoId={ID} />
         </div>
     ))
 }

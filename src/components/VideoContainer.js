@@ -4,6 +4,7 @@ import VideoCard from './VideoCard'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { closeSideBar } from '../store/appSlice'
+import Shimmer from './shimmer'
 
 const VideoContainer = () => {
     const [videos, setVideos] = useState()
@@ -32,7 +33,7 @@ const VideoContainer = () => {
         
     }, [])
     
-    if (!videos) return null
+    if (!videos) return <Shimmer/>
 
     return (
         <div className='flex flex-wrap my-2  font-roboto'>

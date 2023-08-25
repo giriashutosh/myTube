@@ -62,4 +62,8 @@ key -ip
  Need to done
  - youtube search suggestion api gave us the data in XML format.
  -Implement the debouncing in search query in the header.
-
+ - fix the show suggestions on blur
+ -implement caching in redux for search history
+ -use data structure like object or new Map()
+- can build LRU cache also
+-implement n-level nested comment

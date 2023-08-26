@@ -67,3 +67,15 @@ key -ip
  -use data structure like object or new Map()
 - can build LRU cache also
 -implement n-level nested comment
+
+Need to be done
+ -implement live chat
+ challenges
+  - get live data by using web socket (handshake)
+  - update UI (update page so that page does not freeze)
+
+  Data layer (two ways to handle real time data)
+  -web socket (bi directional) instant (whats app, trading app)
+  -API polling (unidirectional) - UI keep polling data from server after certain time period(Gmail, cricbuzz, youtube)
+
+  cors = chrome stopping to call the API

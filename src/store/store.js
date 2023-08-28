@@ -1,10 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit"
 import appReducer from "./appSlice"
 import suggestionReducer from "./suggestionSlice"
+import chatReducer from "./chatSlice"
+
 const appStore = configureStore({
     reducer: {
         appReducer: appReducer,
-        suggestionHistory : suggestionReducer
+        suggestionHistory: suggestionReducer,
+        chat: chatReducer
     }
 })
 

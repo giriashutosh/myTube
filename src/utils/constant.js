@@ -11,4 +11,4 @@ export const SEARCH_SUGGESTION_API = "http://suggestqueries.google.com/complete/
 
 export const RELATED_VIDEOS_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=surfing&key=" + API_KEY ;
   
-  
+export const textLimit = 20

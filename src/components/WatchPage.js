@@ -6,13 +6,19 @@ import { FaUserCircle } from 'react-icons/fa'
 import { AiFillEye, AiFillLike } from 'react-icons/ai'
 import CommentsContainer from './CommentsContainer'
 import RecommendedVideos from './RecommendedVideos'
+import LiveChat from './LiveChat'
+import { addMessage } from '../store/chatSlice'
+import User from "../Assets/Images/user.png"
 
+import { RiSendPlaneFill } from "react-icons/ri";
 const WatchPage = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [videoDetails, setVideoDetails] = useState();
     const [viewDesc, setViewDesc] = useState(false);
     const [text, setText] = useState("")
     const ID = searchParams.get("v");
+
+    const dispatch = useDispatch()
 
     const getVideoDetails = async () => {
         const data = await fetch(VIDEOS_BY_ID + ID)
@@ -76,7 +82,38 @@ const WatchPage = () => {
 
                 }
             </div>
-            <RecommendedVideos setId={setSearchParams} videoId={ID} />
+            <div className='w-full'>
+                {videoDetails.snippet?.liveBroadcastContent === "none" ? (
+                    <div className='py-5 mx-2'>
+                        <h1 className='font-bold p-2 text-center rounded-t-lg bg-slate-200'>Top chats</h1>
+                        <div className='h-[400px] border border-gray-400 overflow-y-scroll flex flex-col-reverse'>
+                            <LiveChat/>
+                        </div>
+                        <div className='w-full flex px-1 border border-slate-300 rounded-b-lg'>
+                            <input 
+                                className='w-full p-2 border-none outline-none'
+                                type='text'
+                                value={text}
+                                placeholder='say something...'
+                                onChange={(e) => setText(e.target.value)}
+                            />
+                            <button
+                                onClick={() => {
+                                    text && dispatch(addMessage({
+                                        dp: (<img className='rounded-full h-6'
+                                            alt='user' src={User} />),
+                                        name: "Ashutosh",
+                                        message: text
+                                    }))
+                                    setText("")
+                                }}>
+                                <RiSendPlaneFill size={25} />
+                                </button>
+                        </div>
+                </div>
+                ): null}
+            </div>
+            {/* <RecommendedVideos setId={setSearchParams} videoId={ID} /> */}
         </div>
     ))
 }

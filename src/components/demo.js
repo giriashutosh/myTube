@@ -131,3 +131,6 @@ const WatchPage = () => {
 };
 
 export default WatchPage;
+
+// https://www.youtube.com/watch?v=SRhDjptowzE
+//https://www.youtube.com/results?search_query=gadar+2

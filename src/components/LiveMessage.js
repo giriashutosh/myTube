@@ -7,8 +7,8 @@ const LiveMessage = ({dp, name, message}) => {
        
           <FaUserCircle className="my-1" size={20} />
         
-        <h1 className="font-semibold  mx-1">Ashutosh Giri</h1>
-        <h1 className="mx-2 text-sm">Its a nice video and explanation, amazing</h1>
+          <h1 className="font-semibold  mx-1">{ name}</h1>
+          <h1 className="mx-2 text-sm">{ message}</h1>
       </div>
      </div>
  )

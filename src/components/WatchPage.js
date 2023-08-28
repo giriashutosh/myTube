@@ -83,7 +83,7 @@ const WatchPage = () => {
                 }
             </div>
             <div className='w-full'>
-                {videoDetails.snippet?.liveBroadcastContent === "none" ? (
+                {videoDetails.snippet?.liveBroadcastContent === "live" ? (
                     <div className='py-5 mx-2'>
                         <h1 className='font-bold p-2 text-center rounded-t-lg bg-slate-200'>Top chats</h1>
                         <div className='h-[400px] border border-gray-400 overflow-y-scroll flex flex-col-reverse'>
@@ -113,7 +113,7 @@ const WatchPage = () => {
                 </div>
                 ): null}
             </div>
-            {/* <RecommendedVideos setId={setSearchParams} videoId={ID} /> */}
+            <RecommendedVideos setId={setSearchParams} videoId={ID} />
         </div>
     ))
 }

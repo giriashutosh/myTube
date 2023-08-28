@@ -4,7 +4,7 @@ import Hippo from '../Assets/Images/hippo.png'
 import UserImg from '../Assets/Images/user.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleSideBar } from '../store/appSlice'
-import { Link } from 'react-router-dom'
+import { Link,  useNavigate } from 'react-router-dom'
 import { FaSearch } from "react-icons/fa"
 import { SEARCH_SUGGESTION_API } from '../utils/constant'
 import { cachedSuggestions } from '../store/suggestionSlice'
@@ -14,7 +14,7 @@ const Header = () => {
     const [suggestions, setSuggestions] = useState([])
     const [showSuggestions, setShowSuggestions] = useState(false)
     const cache = useSelector(state => state.suggestionHistory)
-   
+    const navigate = useNavigate()
     console.log(cache)
     const dispatch = useDispatch()
 
@@ -32,7 +32,7 @@ const Header = () => {
             console.log(json[1])
             setSuggestions(json[1])
             dispatch(cachedSuggestions({
-                [searchQuery] : json[1]
+                [searchQuery]: json[1]
             }))
         } catch (err) {
             console.log(err)
@@ -40,12 +40,14 @@ const Header = () => {
     }
 
     useEffect(() => {
-        const timer = setTimeout(() => {if (cache[searchQuery]) {
+        const timer = setTimeout(() => {
+            if (cache[searchQuery]) {
                 setSuggestions(cache[searchQuery])
             } else {
                 getSearchSuggestion()
-            } }, 200)
-       
+            }
+        }, 200)
+
         return () => {
             clearTimeout(timer)
         }
@@ -64,22 +66,29 @@ const Header = () => {
                 <div className='flex'>
                     <input className='w-[29rem] pl-4 border-2 rounded-l-full h-10 outline-none start-2'
                         value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)} 
+                        onChange={(e) => setSearchQuery(e.target.value)}
                         onFocus={() => setShowSuggestions(true)}
                         onBlur={() => setShowSuggestions(false)}
-                        
-                        ></input>
-                    <button className='bg-gray-100 flex items-center p-2 rounded-r-full'>🔍</button>
+
+                    ></input>
+                    <Link to={"/results?search_query=" + searchQuery}>
+                        <button className='bg-gray-100 flex items-center p-2 rounded-r-full'>🔍</button>
+
+                    </Link>
                 </div>
 
-                {showSuggestions && (suggestions.length ===0 ? <div></div> :<div className='fixed border border-gray shadow-lg bg-white rounded-lg w-[29rem] py-2 px-2 absolute'>
+                {showSuggestions && (suggestions.length === 0 ? (<div></div>) : (<div className='fixed border border-gray shadow-lg bg-white rounded-lg w-[29rem] py-2 px-2 absolute'>
                     <ul>
                         {
-                            suggestions.map((suggest) => <li key={suggest} className='px-3 py-2 shadow-sm hover:bg-gray-100 text-left flex items-center gap-3'><FaSearch />{suggest}</li>)
+                            suggestions.map((suggest) => {
+                                return (<Link to={"/results?search_query=" + suggest} key={suggest}>
+                                    <li key={suggest} className='px-3 py-2 shadow-sm hover:bg-gray-100 text-left flex items-center gap-3' onClick={()=> navigate("/results?search_query=" + suggest)}><FaSearch />{suggest}</li>
+                                </Link>)
+                            })
                         }
 
                     </ul>
-                </div>)}
+                </div>))}
             </div>
 
             {/* for user account  */}

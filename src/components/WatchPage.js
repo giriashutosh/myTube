@@ -20,15 +20,16 @@ const WatchPage = () => {
 
     const dispatch = useDispatch()
 
-    const getVideoDetails = async () => {
-        const data = await fetch(VIDEOS_BY_ID + ID)
-        const json = await data.json()
-        setVideoDetails(json.items[0]);
-        console.log(json)
-    }
+    
 
 
     useEffect(() => {
+        const getVideoDetails = async () => {
+            const data = await fetch(VIDEOS_BY_ID + ID)
+            const json = await data.json()
+            setVideoDetails(json.items[0]);
+            console.log(json)
+        }
         getVideoDetails();
     }, [ID])
 

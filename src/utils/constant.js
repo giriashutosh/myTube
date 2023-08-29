@@ -9,7 +9,7 @@ export const SEARCH_SUGGESTION_API = "https://suggestqueries.google.com/complete
 //export const RELATED_VIDEOS_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&regionCode=IN&type=video&key=" + API_KEY + "&relatedToVideoId=";
 
 export const SEARCHED_VIDEO_API =
-  "https://corsanywhere.herokuapp.com/https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&regionCode=IN&type=video&key=" +
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&regionCode=IN&type=video&key=" +
   API_KEY +
     "&q=";
   

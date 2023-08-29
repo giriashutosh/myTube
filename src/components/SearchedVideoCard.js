@@ -1,6 +1,6 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 // import { addWatchedVideos, removeWatchedVideo } from "../Shared/HistorySlice";
 import { Link } from "react-router-dom";
 import { BsArrowRepeat } from "react-icons/bs";

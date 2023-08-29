@@ -47,7 +47,7 @@ const RecommendedVideos = () => {
         <div className='flex m-3 '>
           <img className = "rounded-lg" src={video.snippet?.thumbnails.medium.url} alt='' />
           <div className='p-2'>
-            <h3 className='font-bold text-left'>{truncateTitle(video.snippet?.title)}</h3>
+            <h3 className='font-bold text-left'>{truncateTitle(video.snippet?.title,10)}</h3>
             <p className='text-left'>{video.snippet.channelTitle}</p>
             <p className='text-left'>{ formatViews(video.statistics.viewCount)}</p>
           </div>

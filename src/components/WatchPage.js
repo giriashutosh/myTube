@@ -39,7 +39,7 @@ const WatchPage = () => {
                 <div className='p-5 '>
                     <iframe
                         className='rounded-lg'
-                        width="1200"
+                        width="1100"
                         height="600"
                         src={"https://www.youtube.com/embed/" + ID + "?autoplay=1"}
                         title="YouTube video player"
@@ -83,8 +83,9 @@ const WatchPage = () => {
 
                 }
             </div>
-            <div className='w-full'>
-                {videoDetails.snippet?.liveBroadcastContent === "live" ? (
+            <div className='flex flex-col '>
+            <div className='w-full '>
+                {videoDetails.snippet?.liveBroadcastContent === "none" ? (
                     <div className='py-5 mx-2'>
                         <h1 className='font-bold p-2 text-center rounded-t-lg bg-slate-200'>Top chats</h1>
                         <div className='h-[400px] border border-gray-400 overflow-y-scroll flex flex-col-reverse'>
@@ -115,6 +116,8 @@ const WatchPage = () => {
                 ): null}
             </div>
             <RecommendedVideos setId={setSearchParams} videoId={ID} />
+            </div>
+            
         </div>
     ))
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { VIDEOS_API } from '../utils/constant'
 import VideoCard from './VideoCard'
 import { Link } from 'react-router-dom'

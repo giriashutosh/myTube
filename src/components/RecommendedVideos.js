@@ -1,6 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import { VIDEOS_API,RELATED_VIDEOS_API } from '../utils/constant';
-import VideoCard from './VideoCard';
+import { VIDEOS_API } from '../utils/constant';
 import { Link } from 'react-router-dom';
 
 const RecommendedVideos = () => {

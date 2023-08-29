@@ -10,7 +10,7 @@ import { timeAgo } from "../utils/helper";
 function SearchedVideoCard({ video, videoType }) {
   console.log(video);
   console.log(videoType);
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   // const removeVideo = (item) => {
   //   dispatch(removeWatchedVideo(item));
   // };
